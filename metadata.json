@@ -1,0 +1,6 @@
+{
+  "name": "Qalbu - Asisten Ibadah",
+  "description": "Aplikasi untuk membantu memantau waktu solat, mencatat progres ibadah harian, dan memberikan motivasi spiritual.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": []
+}
