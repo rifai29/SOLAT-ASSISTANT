@@ -29,7 +29,7 @@ export function PrayerTimesList({ times }: PrayerTimesListProps) {
           Waktu Setempat
         </div>
       </div>
-      <div className="space-y-4 bg-card/30 p-6 rounded-2xl border border-white/5">
+      <div className="space-y-4 bg-card p-6 rounded-2xl border border-primary/5 shadow-sm">
         {relevantTimes.map((item) => (
           <div key={item.label} className="flex justify-between items-center group transition-all">
             <span className="font-serif italic text-xl text-primary/80 group-hover:text-accent group-hover:pl-1 transition-all">{item.label}</span>

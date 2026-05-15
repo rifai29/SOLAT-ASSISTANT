@@ -5,17 +5,17 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Cormorant Garamond", Georgia, serif;
 
-  --color-primary: #E0D8D0; /* Off-white text */
-  --color-secondary: #0B0E14; /* Deep dark background */
-  --color-accent: #C5A267; /* Warm Gold */
-  --color-card: #161B22; /* Card background */
-  --color-muted: #888888;
+  --color-primary: #1A1A1A; /* Dark charcoal text */
+  --color-secondary: #F8F7F3; /* Soft cream background */
+  --color-accent: #8E7345; /* Sophisticated gold */
+  --color-card: #FFFFFF; /* Pure white surface */
+  --color-muted: #717171;
 }
 
 body {
   @apply font-sans bg-secondary text-primary antialiased;
-  background-image: radial-gradient(circle at top right, rgba(197, 162, 103, 0.05), transparent 400px),
-                    radial-gradient(circle at bottom left, rgba(197, 162, 103, 0.03), transparent 600px);
+  background-image: radial-gradient(circle at top right, rgba(142, 115, 69, 0.04), transparent 400px),
+                    radial-gradient(circle at bottom left, rgba(142, 115, 69, 0.02), transparent 600px);
   background-attachment: fixed;
 }
 

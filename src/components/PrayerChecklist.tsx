@@ -31,8 +31,8 @@ export function PrayerChecklist({ checks, onToggle }: PrayerChecklistProps) {
           className={cn(
             "w-full flex items-center justify-between p-5 rounded-2xl border transition-all duration-500",
             checks[prayer.name] 
-              ? "bg-accent text-secondary border-accent shadow-xl shadow-accent/10" 
-              : "bg-card/50 text-primary border-white/5 hover:border-accent/20 shadow-sm"
+              ? "bg-accent text-secondary border-accent shadow-xl shadow-accent/20" 
+              : "bg-card text-primary border-primary/5 hover:border-accent/20 shadow-sm"
           )}
         >
           <div className="flex items-center gap-3">

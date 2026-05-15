@@ -24,14 +24,14 @@ export function Header({ location }: HeaderProps) {
         "Ketenangan Hati dalam Sujud"
       </p>
 
-      <div className="flex gap-4 items-center bg-card/40 backdrop-blur-sm px-4 py-2 rounded-full border border-white/5 shadow-sm">
-        <div className="flex items-center gap-1.5 text-[10px] uppercase tracking-widest font-medium text-primary/70">
-          <MapPin className="w-3.5 h-3.5 text-accent/60" />
+      <div className="flex gap-4 items-center bg-card shadow-sm px-4 py-2 rounded-full border border-primary/5">
+        <div className="flex items-center gap-1.5 text-[10px] uppercase tracking-widest font-medium text-primary/60">
+          <MapPin className="w-3.5 h-3.5 text-accent/50" />
           {location}
         </div>
-        <div className="w-[1px] h-3 bg-white/10" />
-        <div className="flex items-center gap-1.5 text-[10px] uppercase tracking-widest font-medium text-primary/70">
-          <CalendarIcon className="w-3.5 h-3.5 text-accent/60" />
+        <div className="w-[1px] h-3 bg-primary/10" />
+        <div className="flex items-center gap-1.5 text-[10px] uppercase tracking-widest font-medium text-primary/60">
+          <CalendarIcon className="w-3.5 h-3.5 text-accent/50" />
           {format(date, 'EEEE, d MMMM', { locale: id })}
         </div>
       </div>

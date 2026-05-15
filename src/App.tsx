@@ -110,7 +110,7 @@ export default function App() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none"
           >
-            <div className="bg-accent text-secondary px-8 py-4 rounded-full shadow-2xl flex items-center gap-3 border border-white/10">
+            <div className="bg-accent text-secondary px-8 py-4 rounded-full shadow-2xl flex items-center gap-3 border border-black/5">
               <Star className="w-6 h-6 fill-current animate-spin" />
               <div className="font-serif font-bold text-xl italic tracking-wide">Alhamdulillah, Ibadah Selesai!</div>
               <Star className="w-6 h-6 fill-current animate-spin" />
