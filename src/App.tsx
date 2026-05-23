@@ -75,6 +75,13 @@ export default function App() {
     fetchQuote();
   }, [stats.streak]);
 
+  const handleRefreshQuote = async () => {
+    setIsLoadingQuote(true);
+    const res = await getMotivationalQuote(stats.streak, true);
+    setQuote(res);
+    setIsLoadingQuote(false);
+  };
+
   const handleToggle = (prayer: PrayerName) => {
     const newChecks = { ...checks, [prayer]: !checks[prayer] };
     setChecks(newChecks);
@@ -100,6 +107,8 @@ export default function App() {
     localStorage.setItem('qalbu_stats', JSON.stringify(newStats));
   };
 
+  const completedTodayCount = Object.values(checks).filter(Boolean).length;
+
   return (
     <div className="max-w-md mx-auto min-h-screen bg-secondary overflow-x-hidden relative">
       <AnimatePresence>
@@ -110,10 +119,10 @@ export default function App() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none"
           >
-            <div className="bg-accent text-secondary px-8 py-4 rounded-full shadow-2xl flex items-center gap-3 border border-black/5">
-              <Star className="w-6 h-6 fill-current animate-spin" />
+            <div className="bg-accent text-white px-8 py-4 rounded-full shadow-2xl flex items-center gap-3 border border-black/5">
+              <Star className="w-6 h-6 fill-current animate-spin text-gold" />
               <div className="font-serif font-bold text-xl italic tracking-wide">Alhamdulillah, Ibadah Selesai!</div>
-              <Star className="w-6 h-6 fill-current animate-spin" />
+              <Star className="w-6 h-6 fill-current animate-spin text-gold" />
             </div>
           </motion.div>
         )}
@@ -122,11 +131,12 @@ export default function App() {
       <Header location={location} />
       
       <main className="animate-in fade-in slide-in-from-bottom-4 duration-1000">
-        <StatsBar streak={stats.streak} total={stats.totalPoints} />
-        <MotivationCard quote={quote} isLoading={isLoadingQuote} />
+        <StatsBar streak={stats.streak} total={stats.totalPoints} completedTodayCount={completedTodayCount} />
+        <MotivationCard quote={quote} isLoading={isLoadingQuote} onRefresh={handleRefreshQuote} />
         <PrayerChecklist checks={checks} onToggle={handleToggle} />
         <PrayerTimesList times={prayerTimes} />
       </main>
+
 
       <footer className="text-center py-8 text-[10px] uppercase tracking-widest font-bold text-primary/30 font-sans">
         Qalbu Ritual Companion • 2026

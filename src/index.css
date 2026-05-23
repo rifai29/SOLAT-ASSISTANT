@@ -1,15 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Cormorant Garamond", Georgia, serif;
 
-  --color-primary: #2D3A27; /* Dark Forest Slate */
-  --color-secondary: #E9EDEA; /* Soft Sage Background */
-  --color-accent: #2A5A43; /* Deep Pine */
-  --color-card: #F4F6F5; /* Very Light Sage Card */
-  --color-muted: #5C6F65;
+  --color-primary: #0F172A; /* Slate 900 for premium readability */
+  --color-secondary: #F8FAFC; /* Slate 50 for clean modern neutral light background */
+  --color-accent: #10B981; /* Fresh Islamic Emerald */
+  --color-accent-dark: #059669; /* Deep Pine Emerald */
+  --color-card: #FFFFFF; /* High contrast white surfaces */
+  --color-muted: #64748B; /* Slate 500 */
+  --color-gold: #D97706; /* Ambar gold for accents */
 }
 
 @layer base {
@@ -27,11 +29,13 @@
 
 body {
   @apply font-sans bg-secondary text-primary antialiased;
-  background-image: radial-gradient(circle at top right, rgba(42, 90, 67, 0.03), transparent 400px),
-                    radial-gradient(circle at bottom left, rgba(42, 90, 67, 0.02), transparent 600px);
+  background-image: 
+    radial-gradient(circle at 100% 0%, rgba(16, 185, 129, 0.05) 0%, transparent 400px),
+    radial-gradient(circle at 0% 100%, rgba(217, 119, 6 0.03) 0%, transparent 400px);
   background-attachment: fixed;
 }
 
 #root {
   min-height: 100vh;
 }
+
