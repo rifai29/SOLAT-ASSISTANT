@@ -13,7 +13,7 @@ export function MotivationCard({ quote, isLoading, onRefresh }: MotivationCardPr
     <motion.div 
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
-      className="w-full max-w-md mx-auto px-4 my-6"
+      className="w-full"
     >
       <div className="bg-white border border-primary/5 p-6.5 rounded-3xl relative overflow-hidden group shadow-sm flex flex-col gap-4">
         {/* Decorative subtle background pattern */}

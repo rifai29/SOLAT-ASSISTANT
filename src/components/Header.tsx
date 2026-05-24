@@ -30,7 +30,7 @@ export function Header({ location }: HeaderProps) {
       </p>
 
       {/* Date & Location Pill Container */}
-      <div className="flex gap-4 items-center bg-white shadow-sm hover:shadow-md transition-shadow duration-350 px-5 py-2.5 rounded-2xl border border-primary/5 w-full justify-center">
+      <div className="flex gap-4 items-center bg-white shadow-sm hover:shadow-md transition-shadow duration-350 px-5 py-2.5 rounded-2xl border border-primary/5 w-full max-w-md justify-center">
         <div className="flex items-center gap-2 text-[11px] font-medium text-muted">
           <MapPin className="w-3.5 h-3.5 text-accent" />
           <span className="text-primary truncate max-w-[120px]">{location}</span>

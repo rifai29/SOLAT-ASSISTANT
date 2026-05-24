@@ -19,7 +19,7 @@ const PRAYERS: { name: PrayerName; timeLabel: string; subtitle: string }[] = [
 
 export function PrayerChecklist({ checks, onToggle }: PrayerChecklistProps) {
   return (
-    <div className="space-y-3 w-full max-w-md mx-auto px-4 mt-6">
+    <div className="space-y-3 w-full">
       <div className="flex items-center justify-between px-2 mb-2">
         <h2 className="text-[10px] uppercase tracking-[0.25em] font-bold text-muted">
           Catat Ibadah Hari Ini

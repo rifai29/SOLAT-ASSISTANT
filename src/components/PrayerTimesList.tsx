@@ -51,7 +51,7 @@ export function PrayerTimesList({ times }: PrayerTimesListProps) {
   }
 
   return (
-    <div className="w-full max-w-md mx-auto px-4 mt-8 pb-12">
+    <div className="w-full">
       <div className="flex items-center justify-between px-2 mb-4">
         <h2 className="text-[10px] uppercase tracking-[0.25em] font-bold text-muted">
           Jadwal Sholat Hari Ini

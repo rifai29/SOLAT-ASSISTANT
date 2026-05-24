@@ -12,7 +12,7 @@ export function StatsBar({ streak, total, completedTodayCount }: StatsBarProps) 
   const progressPercentage = (completedTodayCount / 5) * 100;
 
   return (
-    <div className="w-full max-w-md mx-auto px-4 mt-2 space-y-4">
+    <div className="w-full space-y-4">
       {/* 2-Column Stats Cards */}
       <div className="grid grid-cols-2 gap-4">
         {/* Streak Card */}

@@ -110,7 +110,7 @@ export default function App() {
   const completedTodayCount = Object.values(checks).filter(Boolean).length;
 
   return (
-    <div className="max-w-md mx-auto min-h-screen bg-secondary overflow-x-hidden relative">
+    <div className="w-full min-h-screen bg-secondary overflow-x-hidden relative">
       <AnimatePresence>
         {showCelebration && (
           <motion.div 
@@ -128,19 +128,29 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      <Header location={location} />
-      
-      <main className="animate-in fade-in slide-in-from-bottom-4 duration-1000">
-        <StatsBar streak={stats.streak} total={stats.totalPoints} completedTodayCount={completedTodayCount} />
-        <MotivationCard quote={quote} isLoading={isLoadingQuote} onRefresh={handleRefreshQuote} />
-        <PrayerChecklist checks={checks} onToggle={handleToggle} />
-        <PrayerTimesList times={prayerTimes} />
-      </main>
+      <div className="max-w-5xl mx-auto w-full px-4 md:px-8 pb-12">
+        <Header location={location} />
+        
+        <main className="animate-in fade-in slide-in-from-bottom-4 duration-1000 mt-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start max-w-md md:max-w-none mx-auto">
+            {/* Actionable items: Stats, Checklist */}
+            <div className="space-y-6">
+              <StatsBar streak={stats.streak} total={stats.totalPoints} completedTodayCount={completedTodayCount} />
+              <PrayerChecklist checks={checks} onToggle={handleToggle} />
+            </div>
 
+            {/* Information & Inspiration: Motivation, Prayer Times */}
+            <div className="space-y-6">
+              <MotivationCard quote={quote} isLoading={isLoadingQuote} onRefresh={handleRefreshQuote} />
+              <PrayerTimesList times={prayerTimes} />
+            </div>
+          </div>
+        </main>
 
-      <footer className="text-center py-8 text-[10px] uppercase tracking-widest font-bold text-primary/30 font-sans">
-        Qalbu Ritual Companion • 2026
-      </footer>
+        <footer className="text-center mt-12 py-6 text-[10px] uppercase tracking-widest font-bold text-primary/30 font-sans">
+          Qalbu Ritual Companion • 2026
+        </footer>
+      </div>
     </div>
   );
 }
