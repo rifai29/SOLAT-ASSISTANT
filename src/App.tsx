@@ -128,26 +128,55 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      <div className="max-w-5xl mx-auto w-full px-4 md:px-8 pb-12">
+      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 pb-12">
         <Header location={location} />
         
-        <main className="animate-in fade-in slide-in-from-bottom-4 duration-1000 mt-2">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start max-w-md md:max-w-none mx-auto">
-            {/* Actionable items: Stats, Checklist */}
-            <div className="space-y-6">
+        <main className="animate-in fade-in slide-in-from-bottom-4 duration-1000 mt-4">
+          {/* A magnificent responsive layout: 1 column on mobile, 2 columns on medium, 3 columns on large screens */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+            
+            {/* COLUMN 1: Daily Stats & Spiritual Motivation (lg:col-span-4) */}
+            <div className="md:col-span-1 lg:col-span-4 space-y-6">
               <StatsBar streak={stats.streak} total={stats.totalPoints} completedTodayCount={completedTodayCount} />
+              <MotivationCard quote={quote} isLoading={isLoadingQuote} onRefresh={handleRefreshQuote} />
+            </div>
+
+            {/* COLUMN 2: Today's Central Checklist (lg:col-span-4) */}
+            <div className="md:col-span-1 lg:col-span-4 space-y-6">
               <PrayerChecklist checks={checks} onToggle={handleToggle} />
             </div>
 
-            {/* Information & Inspiration: Motivation, Prayer Times */}
-            <div className="space-y-6">
-              <MotivationCard quote={quote} isLoading={isLoadingQuote} onRefresh={handleRefreshQuote} />
+            {/* COLUMN 3: Prayer Times Watch & Live Guidance Widget (md:col-span-2 lg:col-span-4) */}
+            <div className="md:col-span-2 lg:col-span-4 space-y-6">
               <PrayerTimesList times={prayerTimes} />
+              
+              {/* Premium Interactive Guidance Card - Completes the beautiful widescreen balance */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.2 }}
+                className="bg-white p-6 rounded-3xl border border-primary/5 shadow-sm space-y-4"
+              >
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+                  <span className="text-[10px] uppercase tracking-[0.25em] font-bold text-muted">Amanat Qalbu</span>
+                </div>
+                <div className="space-y-3">
+                  <p className="text-xs text-muted leading-relaxed">
+                    Setiap hela napas dan detak jantung adalah anugerah tiada tara. Gunakan Qalbu Aide untuk senantiasa mengiringi perjalanan spiritual Anda sehari-hari agar lebih tenang, tertata, dan berkah.
+                  </p>
+                  <div className="pt-2 border-t border-primary/5 flex items-center justify-between text-[9px] font-mono text-accent uppercase tracking-widest font-semibold">
+                    <span>#MuhasabahDiri</span>
+                    <span>Istiqomah</span>
+                  </div>
+                </div>
+              </motion.div>
             </div>
+
           </div>
         </main>
 
-        <footer className="text-center mt-12 py-6 text-[10px] uppercase tracking-widest font-bold text-primary/30 font-sans">
+        <footer className="text-center mt-16 py-6 text-[10px] uppercase tracking-widest font-bold text-primary/30 font-sans">
           Qalbu Ritual Companion • 2026
         </footer>
       </div>
