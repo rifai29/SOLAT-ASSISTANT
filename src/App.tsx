@@ -176,7 +176,7 @@ export default function App() {
           </div>
         </main>
 
-        <footer className="text-center mt-16 py-6 text-[10px] uppercase tracking-widest font-bold text-primary/30 font-sans">
+        <footer className="text-left mt-16 py-6 px-2 md:px-0 text-[10px] uppercase tracking-widest font-bold text-primary/30 font-sans">
           Qalbu Ritual Companion • 2026
         </footer>
       </div>
